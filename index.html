@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="RappiFrontTest">
+
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carrito de compras rappi</title>
+       <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css" />
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">    
+ <link rel="stylesheet" href="css/fixes.less"/>
+   
+  </head>
+
+  <body>
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Inicio</a>
+	  <a class="navbar-brand" href="#/marca">Categorias</a>
+	  <a class="navbar-brand" href="#/referencia">Productos</a>
+	  <a class="navbar-brand" href="#/carrito">carrito</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+ 
+      <ul class="nav navbar-nav navbar-right">
+      <span class="navbar-brand"><a href="#/marca">Categorias</a></span>  
+      <span class="navbar-brand alert-danger"><a href="#/login">Salir</a></span>
+      </ul>
+        
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+   
+  
+  <div class="jumbotron">
+      <div class="container">
+        <div class="col-xs-offset-2 col-xs-8">
+          <div ng-view></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="credits text-center">
+      <p>
+          <a href="/#">by William Felipe Cardenas</a>
+      </p>
+	  <p>
+          <a href="/#">3003375386</a>
+      </p>
+      
+    </div>
+
+      
+    <script src="lib/jquery-2.0.3.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="lib/angular-cookies.js"></script>
+    <script src="lib/ngStorage.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="modules/authentication/services.js"></script>
+    <script src="modules/authentication/controllers.js"></script>
+    <script src="modules/home/controllers.js"></script>
+    <script src="modules/marca/controllers.js"></script>
+    <script src="modules/referencia/controllers.js"></script>
+	<script src="modules/carrito/controllers.js"></script>
+    
+
+  </body>
+
+</html>
