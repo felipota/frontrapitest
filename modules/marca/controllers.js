@@ -9,13 +9,13 @@ angular.module('Marca')
         $http.get('data.json')
           .then(function(res){ 
               $scope.categories = res.data.categories;
-			  $scope.products = res.data.products;
+			  $localStorage.products=$scope.products = res.data.products;
 			  
           })
-          
+     
     $scope.myFunc = function(id,categorie) {
         $localStorage.message=categorie;
         $localStorage.categorie=id;
-		$localStorage.products= $scope.products;
+	
     };
     }]);

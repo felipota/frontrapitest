@@ -10,17 +10,34 @@
       <h1> <small>Productos</small></h1>
   </div>
   
+<select ng-model="selectedItem" ng-change="myFilter(selectedItem)" ng-options="item for item in ['Disponible', 'Agotados', 'Best Seller','mayor a 30', 'menor a 10']">
+    <option value="">-- seleccione una opcion--</option>
+ </select>
+ <label>Name only <input ng-model="search.name"></label>
+<button type="button" class="btn btn-default"  data-toggle="collapse" data-target="#orden">orden</button>
+<div id="orden"class="collapse btn-group " role="group" aria-label="...">
+
+  <button type="button" class="btn btn-default" ng-click="orderFunction('name')">Nombre</button>
+  <button type="button" class="btn btn-default" ng-click="orderFunction('price')">Precio Menor</button>
+  <button type="button" class="btn btn-default" ng-click="orderFunction('price',true)">Precio Mayor</button>
+  <button type="button" class="btn btn-default" ng-click="myFilter(1)" >Precio mayor a 20</button>
+  <button type="button" class="btn btn-default" ng-click="myFilter(2)" >Precio menor a 150</button>
+  <button type="button" class="btn btn-default" ng-click="myFilter(3)" >Disponibles</button>
+  <button type="button" class="btn btn-default" ng-click="myFilter(4)" >Agotados</button>
+  <button type="button" class="btn btn-default" ng-click="myFilter(5)" >Best Seller</button>
+</div>
 
 <div class="row" >
-    <div  ng-repeat="product in products | filter:buscarproduct | orderBy:orderProp">
+    <div  ng-repeat="product in products | filter:search:strict | orderBy:filter : reverse">
 
        
 		<div class="col-sm-6 col-md-4">
 		 
 			<div class="thumbnail">
+				<h3 class="text-info">{{product.name}}</h3>
 			  <img src="{{product.img}}" class="glyphicon glyphicon-star" alt="{{product.name}}">
 			  <div class="caption">
-					<h3>{{product.name}}</h3>
+					
 					<p>{{product.best_seller}}</p>
 					<p>{{product.description}}</p>
 					<p>${{product.price}}</p>

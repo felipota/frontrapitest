@@ -3,10 +3,19 @@
   <h1><small>Lista de Compras</small></h1>
 </div>
 <div class="row" >
-	
-	
+	<ul class="list-group">
+		<div  ng-repeat="carrito in carritos">
+		  <li class="list-group-item">
+			<span>{{carrito.name + " $" + carrito.price}}</span>
+			<span class="badge"><h6>{{carrito.cant}}</h6></span>
+			<div class="btn-group" role="group" aria-label="...">
+					<button type="button" class="btn btn-default"  ng-click="addProducts(carrito.id,1)" >+</button>
+					<button type="button" class="btn btn-default" ng-click="addProducts(carrito.id,-1)">-</button>
+			</div>
+			
+		  </li>
+		</div>
+</ul>
 
-</div>
-       
  
                    

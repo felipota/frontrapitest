@@ -6,17 +6,24 @@ angular.module('Car')
     function ($scope,$http,$rootScope,$localStorage) {
 
           
-		  $scope.items = $localStorage.carrito;
-	
-		  
-		  $scope.addProducts = function(idProduct)
+		  $scope.carritos = $localStorage.carrito;
+		  $scope.addProducts = function(idProduct,suma)
 		  {
-			  $localStorage.carrito.push(idProduct);
-		  }
-		  $scope.dropProducts = function(idProduct)
-		  {
-			  $localStorage.carrito.push(idProduct);
-		  }
+			  var cont = 0
+			  angular.forEach($localStorage.carrito,function(event) {
+					if(event.id == idProduct)
+					{
+						$localStorage.carrito[cont].cant = $localStorage.carrito[cont].cant + suma;
+						
+						if($localStorage.carrito[cont].cant == 0)
+						{
+							delete $localStorage.carrito[cont];
+						}
+					}
+					cont++;
+			  });
+			   $scope.carritos = $localStorage.carrito;
+		  };
 		  
 
     }]);
