@@ -4,7 +4,8 @@ angular.module('Referencia')
 .controller('ReferenciaController',
     ['$scope','$http','$rootScope','$localStorage','$filter',
     function ($scope,$http,$rootScope,$localStorage,$filter) {
-			console.log($localStorage.products)
+			
+		
             $scope.products = [];
 			$scope.filter = "available";
 			$localStorage.message = $localStorage.message == undefined ? "Todos los productos" : $localStorage.message;
@@ -53,6 +54,12 @@ angular.module('Referencia')
 		  };
 		  $scope.filtrador = function(field, condition)
 				{
+				   $http.get('data.json')
+						.then(function(res){ 
+						$localStorage.products= res.data.products;
+			  
+					})	;
+				
 					 $scope.products = [];
 						var value=0;
 						angular.forEach($localStorage.products, function(event) {
@@ -72,7 +79,7 @@ angular.module('Referencia')
 								}
 							
 						});
-						return $scope.products;
+						
 				}
 		  $scope.myFilter = function (item) {
 					  switch (item) {
