@@ -17,7 +17,7 @@ angular.module('Car')
 						
 						if($localStorage.carrito[cont].cant == 0)
 						{
-							delete $localStorage.carrito[cont];
+							$localStorage.carrito.splice(cont,1);
 						}
 					}
 					cont++;
