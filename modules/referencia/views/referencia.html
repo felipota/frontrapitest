@@ -1,48 +1,62 @@
 <!DOCTYPE html>
-<div class="page-header">
-  <div class="panel panel-default">
-  <div class="panel-body">
-     <div class="jumbotron">
-  <h1>Categoria {{categorie}}</h1>
-  <p>Regresar</p>
-  <p><a class="btn btn-primary btn-lg" href="#/marca" role="button">Categorias</a></p>
-</div>
-      <h1> <small>Productos</small></h1>
-  </div>
-  
+ <h1>Productos </h1>
+  <h2>seleccionemos Productos</h2>
+  <h3>Categoria: <a>{{categorie}}</a></h3>
+
+
+
+
 <div class="panel panel-default">
-  <div class="panel-body">
-			<div id="orden"class="collapse btn-group " role="group" aria-label="...">
-
-			  <button type="button" class="btn btn-default" ng-click="orderFunction('name')">Nombre</button>
-			  <button type="button" class="btn btn-default" ng-click="orderFunction('price')">Precio Menor</button>
-			  <button type="button" class="btn btn-default" ng-click="orderFunction('price',true)">Precio Mayor</button>
-			  <button type="button" class="btn btn-default" ng-click="myFilter(1)" >Precio mayor a 20</button>
-			  <button type="button" class="btn btn-default" ng-click="myFilter(2)" >Precio menor a 150</button>
-			  <button type="button" class="btn btn-default" ng-click="myFilter(3)" >Disponibles</button>
-			  <button type="button" class="btn btn-default" ng-click="myFilter(4)" >Agotados</button>
-			  <button type="button" class="btn btn-default" ng-click="myFilter(5)" >Best Seller</button>
-			</div>
+  <div class="panel-body boxesfix">
+			<div id="orden" class="collapse btn-group" role="group" aria-label="...">
+			
+						<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" ">
+						<span class="sr-only">Toggle Dropdown</span>
+						<span>Ordenar</span>
+						<span class="caret"></span>
+					</button>
+						 <ul class="dropdown-menu dropdown-xs-only" role="menu">
+						<li><a ng-click="orderFunction('name')">Nombre</a></li>
+						<li><a ng-click="orderFunction('price')">Precio Menor</a></li>
+						<li><a ng-click="orderFunction('price',true)">Precio Mayor</a></li>
+					</ul>
+					</div>
+					
+		<div id="orden" class="collapse btn-group" role="group" aria-label="...">
+			<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" ">
+				<span class="sr-only">Toggle Dropdown</span>
+				<span>Filtrar</span>
+				<span class="caret"></span>
+			</button>
+				 <ul class="dropdown-menu dropdown-xs-only" role="menu">
+				<li><a ng-click="myFilter(1)">Precio mayor a 20</a></li>
+				<li><a ng-click="myFilter(2)">Precio menor a 150</a></li>
+				<li><a ng-click="myFilter(3)">Disponibles</a></li>
+				<li><a ng-click="myFilter(4)">Agotados</a></li>
+				<li><a ng-click="myFilter(5)">Best Seller</a></li>
+			</ul>
+		</div>
+			
 	</div>
-				
-</div>
 
+</div>
+    <hr class="brace">	
 <div class="row" >
 
-    <div class="col-sm-6 col-md-4" ng-repeat="product in products | filter:search:strict | orderBy:filter : reverse">
+    <div class="col-sm-6 col-md-4 " ng-repeat="product in products | filter:search:strict | orderBy:filter : reverse">
 
        
 	
 		 
-			<div class="thumbnail">
-				<h3 class="text-info">{{product.name}}</h3>
+			<div class="thumbnail boxesfix">
+				<h2>{{product.name}}</h2>
 			  <img src="{{product.img}}" class="glyphicon glyphicon-star" alt="{{product.name}}">
 			  <div class="caption">
 					
 					<p>{{product.best_seller}}</p>
-					<p>{{product.description}}</p>
+					<h3>{{product.description}}</h3>
 					<p>${{product.price}}</p>
-					<p>{{product.available}}</p>
+					<a>{{product.available}}</a>
 					
 					<p><a class="btn btn-primary" ng-click="addProducts(product.id,product.name,product.price)" role="button">Añadir</a></p>
 			  </div>
@@ -56,6 +70,5 @@
 
 </div>
       
-      
-    </div>
-    </div>
+
+ 

@@ -1,25 +1,21 @@
-<div class="page-header">
+<!DOCTYPE html>
   <h1>Categorias </h1>
-  <h1><small>seleccionemos una categoria</small></h1>
-</div>
-<div class="row" >
+  <h2>seleccionemos categoria</h2>
+    <hr class="brace">	
+
+
+
+	
     <div  ng-repeat="categorie in categories | filter:buscat | orderBy:orderProp">
-  <!--                        
-    <button type="button" class="list-group-item">{{marca.marcaid}}</button>
-    <button type="button" class="list-group-item">{{marca.descripcion}}</button>
-    <button type="button" class="list-group-item">{{marca.marca}}</button>
-    <button type="button" class="list-group-item"><img class="brightness" src="images/parte/{{marca.image}}"> </button>
-       -->    
-	   
-       <div class="col-xs-6 col-md-3  cuadro-size" >	
+
+       <div class="col-xs-6 col-md-3 boxesfix" >	
            <a href="#/referencia" class="thumbnail"  ng-click="myFunc(categorie.categori_id,categorie.name)">
               <button type="button" class="list-group-item">{{categorie.name}}</button>
             </a>
         </div>
 		   
 
-   
-  </div>
+
 
 </div>
        
