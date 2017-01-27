@@ -16,12 +16,8 @@ angular.module('Car')
 						$localStorage.carrito[cont].cant = $localStorage.carrito[cont].cant + suma;
 						
 						if($localStorage.carrito[cont].cant == 0)
-						{
-<<<<<<< HEAD
+						{ 
 							$localStorage.carrito.splice(cont,1);
-=======
-							delete $localStorage.carrito[cont];
->>>>>>> 22349e4c037b322eec0d1d78b62ca38256554113
 						}
 					}
 					cont++;
@@ -31,3 +27,4 @@ angular.module('Car')
 		  
 
     }]);
+
