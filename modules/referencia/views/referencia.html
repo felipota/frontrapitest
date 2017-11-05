@@ -1,5 +1,5 @@
 <!DOCTYPE html>
- <h1>Productos </h1>
+ <h1 class="thetitleb">Productos </h1>
   <h2>seleccionemos Productos</h2>
   <h3>Categoria: <a>{{categorie}}</a></h3>
 
@@ -7,7 +7,7 @@
 
 
 <div class="panel panel-default">
-  <div class="panel-body boxesfix">
+  <div class="panel-body boxesfix ">
 			<div id="orden" class="collapse btn-group" role="group" aria-label="...">
 			
 						<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" ">
@@ -48,15 +48,15 @@
        
 	
 		 
-			<div class="thumbnail boxesfix">
-				<h2>{{product.name}}</h2>
+			<div class="thumbnail boxesfix boxi">
+				<h2 class="thetitle">{{product.name}}</h2>
 			  <img src="{{product.img}}" class="glyphicon glyphicon-star" alt="{{product.name}}">
 			  <div class="caption">
 					
 					<p>{{product.best_seller}}</p>
-					<h3>{{product.description}}</h3>
-					<p>${{product.price}}</p>
-					<a>{{product.available}}</a>
+					<h3 class="ladescripcion"><a>{{product.available}}<br/></a> {{product.description}}</h3>
+					<p class="price">${{product.price}}</p>
+					
 					
 					<p><a class="btn btn-primary" ng-click="addProducts(product.id,product.name,product.price)" role="button">Añadir</a></p>
 			  </div>

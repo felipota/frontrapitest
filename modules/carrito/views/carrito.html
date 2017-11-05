@@ -1,5 +1,5 @@
 <!DOCTYPE html>
- <h1>Carrito de Compras</h1>
+ <h1 class="thetitleb">Carrito de Compras</h1>
   <h2>Lista de Compras</h2>
     <hr class="brace">
 <div class="row" >
@@ -9,9 +9,10 @@
 			<div >
 				<span class="badge"><h4>{{carrito.cant}}</h4></span>
 				<span><a>{{carrito.name }}</a></span>
-				<span>$ {{ carrito.price}}</span>
 				
-				<div class="btn-group btngroupfix" role="group" aria-label="...">
+				
+				<div class="btn-group btngroupfix myButton" role="group" aria-label="...">
+					<span class="pricecheck">$ {{ carrito.price}}</span>
 				<button type="button" class="myButton "  ng-click="addProducts(carrito.id,1)" >+</button>
 				<button type="button" class="myButton" ng-click="addProducts(carrito.id,-1)">-</button>
 				</div>

@@ -2,7 +2,9 @@ body {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   background-color: #fac564;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/5908/food.png");
+ /* background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/5908/food.png");*/
+  background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url( "../img/08.jpg") repeat 0 0;
+  min-width:400px;
 }
 .container {
   padding: 25px 100px;
@@ -108,9 +110,91 @@ h3 { color: #7c795d; font-family: 'Source Sans Pro', sans-serif; font-size: 28px
 
 p { color: #4c4a37; font-family: 'Source Sans Pro', sans-serif; font-size: 18px; line-height: 32px; margin: 0 0 24px; }
 
-
+/*
 a { color: #ff9900; background: #fff4a3; text-decoration: none; }
 
 
 a:hover { color: #ffcc66 }
+*/
+.aligner{
+	text-align:center;
+}
+.nav-tabs.nav-justified > li > a
+{
+	border: 0px;
+	color:#FFF !important;
+}
+.navbar-default{
+background-color:Darkred;
 
+}
+.nav-tabs.nav-justified > li > a:hover
+{
+	background-color:Brown;
+	color:#FFF !important;
+}
+.nav-tabs.nav-justified > li > a:visited
+{
+	background-color:Brown;
+	color:#FFF !important;
+}
+.navbar-brand
+{
+	color:#FFF !important;
+}
+.thetitle
+{
+ text-align:center;
+ text-transform: uppercase;
+
+ font-size:25px;
+}
+.price
+{
+	font-size:20px;
+	font-weight: bold;
+}
+.ladescripcion
+{
+	font-size:18px;
+	 text-align: justify;
+    text-justify: inter-word;
+}
+.brace
+{
+ color:DodgerBlue;
+	background:none;
+	
+	
+}
+.brace::before
+{
+	border-top-left-radius:0px;
+	color:DodgerBlue;
+}
+.brace::after
+{
+	border-top-right-radius:0px;
+	color:DodgerBlue;
+}
+.boxi{
+	height:480px;
+	min-width:130px;
+	background-color:#e2edff;
+}
+.thetitleb
+{
+		color:#000;
+}
+.myButton
+{
+	float:Right;
+}
+
+.pricecheck
+{
+	
+	font-weight:bold;
+	font-size:20px;
+	padding-right:10px;
+}
